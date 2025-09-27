@@ -563,7 +563,7 @@ footer {
 }
 
 nav ul {
-  background: #333;   /* dark gray dropdown */
+     /* dark gray dropdown */
   color: #fff;
   border-radius: 8px;
   padding: 10px 0;
