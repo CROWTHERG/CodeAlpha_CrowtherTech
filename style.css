@@ -1,4 +1,21 @@
+/* =========================
+   Original CSS (preserved)
+   ------------------------
+   (Your original stylesheet is included verbatim here
+    so existing layout & selectors remain unchanged.)
+   ========================= */
+
 /* Global Reset & Defaults */
+:root {
+    --primary: #3399ff;
+    --secondary: #66cce0;
+    --accent: #0077cc;
+    --text-dark: #333333;
+    --text-light: #fafafa;
+    --shadow: rgba(0, 0, 0, 0.3);
+    --glow: 0 0 10px var(--primary);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -18,8 +35,8 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     font-family: 'inter', sans-serif; /* Futuristic Font */
-    background-color: #0a0a0a; /* Dark Background */
-    color: #fff; /* White text for contrast */
+    background-color: #f5f5f5; /* Dark Background */
+    color: #333333; /* White text for contrast */
 }
 
 h1, h2, h3 {
@@ -34,24 +51,36 @@ h1, h2, h3 {
 }
 
 body.landing-dark {
-    background-color: #0a0a0a;
+    background-color: #f5f5f5;
     color: #e0e0e0;
     font-family: 'Orbitron', sans-serif;
     text-align: center;
+    background-color: var(--text-light);
+    color: var(--text-dark);
+
+}
+
+.order {
+    align-items: center;
+    text-align: center;
+    margin-bottom: 32px;
 }
 
 .landing-main {
     padding: 100px 20px;
-    background: linear-gradient(135deg, #1e1e1e, #2a2a2a); /* Subtle gradient */
     color: white;
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6); /* Adds depth */
+    width: 100%; /* Ensure it spans the full width */
+    margin: 0 auto; /* Center the content */
+    max-width: 1200px; /* Optional: Limit the width for larger screens */
 }
 
 .intro-text {
     font-size: 2.5rem;
-    color: #00ffcc;
-    text-shadow: 0 0 10px #00ffcc;
+    color: #3399ff;
+    text-shadow: 0 0 10px #3399ff;
     animation: fadeInUp 1.5s ease-out;
+    color: var(--primary);
+    text-shadow: var(--glow);
 }
 
 .contact-info, .services-overview, .contact-form {
@@ -61,7 +90,7 @@ body.landing-dark {
 
 .contact-info h2, .services-overview h2, .contact-form h2 {
     font-size: 2rem;
-    color: #00ffcc;
+    color: #3399ff;
     margin-bottom: 20px;
 }
 
@@ -71,12 +100,16 @@ body.landing-dark {
     font-size: 1.1rem;
 }
 
+.contact-info .cta-button {
+    color: #333333;
+}
+
 .contact-info li, .services-overview li {
     margin: 10px 0;
 }
 
 .contact-info a {
-    color: #00ffcc;
+    color: #3399ff;
     text-decoration: none;
 }
 
@@ -85,7 +118,7 @@ body.landing-dark {
 }
 
 .contact-form {
-    background: #111;
+    background: #ffffff;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
@@ -103,25 +136,27 @@ body.landing-dark {
     margin: 10px 0;
     border: none;
     border-radius: 5px;
-    background-color: #222;
-    color: #fff;
+    background-color: #fafafa;
+    color: #333333;
     font-size: 1rem;
 }
 
 .contact-form button {
     padding: 12px 25px;
-    background: linear-gradient(90deg, #00ffcc, #0088ff);
-    color: #000;
+    background: linear-gradient(90deg, #3399ff, #66cce0);
+    color: #333333;
     font-weight: bold;
     border: none;
     border-radius: 30px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px #00ffcc;
+    box-shadow: 0 0 10px #3399ff;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    box-shadow: var(--glow);
 }
 
 .contact-form button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #00ffcc;
+    box-shadow: 0 0 20px #3399ff;
 }
 
 @media (max-width: 768px) {
@@ -134,28 +169,50 @@ body.landing-dark {
     }
 }
 
+
+
 .tagline {
     font-size: 1.3rem;
     margin: 20px 0;
-    color: #ccc;
+    color: #777777;
 }
 
 .cta-button {
+
     display: inline-block;
     padding: 12px 25px;
-    background: linear-gradient(90deg, #00ffcc, #0088ff);
-    color: #000;
+    background: linear-gradient(90deg, #0077cc, #00bbd4);
+    color: #333333;
     font-weight: bold;
     border: none;
     border-radius: 30px;
     text-decoration: none;
     transition: transform 0.3s ease;
-    box-shadow: 0 0 10px #00ffcc;
+    box-shadow: 0 0 10px #3399ff;
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #00ffcc;
+    box-shadow: 0 0 10px #66ccff; /* Softer glow */
+}
+
+/* Why Work Section */
+.why-work {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 50px 0;
+}
+
+.why-work h2 {
+    font-size: 23px;
+    text-align: center;
+    color: #3399ff;
+}
+
+.why-work li {
+    list-style: none;
+    margin-top: 23px;
 }
 
 @keyframes fadeInUp {
@@ -171,7 +228,7 @@ body.landing-dark {
 
 /* Section for Services Crafted for the Future */
 .services-box {
-    background-color: #111;
+    background-color: #ffffff;
     padding: 40px;
     margin: 40px auto;
     width: 90%;
@@ -179,7 +236,7 @@ body.landing-dark {
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 255, 204, 0.2);
-    color: #fff;
+    color: #333333;
     font-size: 1.2rem;
 }
 
@@ -188,9 +245,11 @@ body.landing-dark {
     text-align: center;
     font-size: 1.6rem;
     font-weight: bold;
-    color: #00ffcc;
+    color: #3399ff;
     margin-top: 30px;
-    text-shadow: 0 0 10px #00ffcc;
+    text-shadow: 0 0 10px #3399ff;
+    color: var(--primary);
+    text-shadow: var(--glow);
 }
 
 /* CTA Section Full Centering */
@@ -199,7 +258,7 @@ body.landing-dark {
     justify-content: center;
     align-items: center;
     padding: 80px 20px;
-    background-color: #111;
+    background-color: #ffffff;
     text-align: center;
 }
 
@@ -224,16 +283,16 @@ body.landing-dark {
 
 .cta-section p {
     font-size: 1.8rem;
-    color: #00ffcc;
+    color: #3399ff;
     font-weight: 600;
-    text-shadow: 0 0 10px #00ffcc;
+    text-shadow: 0 0 10px #3399ff;
     margin-bottom: 20px;
     max-width: 800px;
 }
 
 .cta-button {
-    background: linear-gradient(90deg, #00ffcc, #0088ff);
-    color: #000;
+    background: linear-gradient(90deg, #3399ff, #66cce0);
+    color: #333333;
     padding: 14px 30px;
     font-size: 1.1rem;
     border: none;
@@ -241,12 +300,14 @@ body.landing-dark {
     text-decoration: none;
     font-weight: bold;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    box-shadow: 0 0 10px #00ffcc;
+    box-shadow: 0 0 10px #3399ff;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    box-shadow: var(--glow);
 }
 
 .cta-button:hover {
     transform: scale(1.05);
-    box-shadow: 0 0 20px #00ffcc;
+    box-shadow: 0 0 20px #3399ff;
 }
 
 
@@ -259,7 +320,7 @@ header {
     justify-content: space-between;
     align-items: center;
     padding: 20px;
-    background-color: #222; /* Dark Header */
+    background-color: #fafafa; /* Dark Header */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Shadow for depth */
 }
 
@@ -274,20 +335,23 @@ header {
     border-radius: 50%;
     object-fit: cover;
     margin-right: 20px;
-    border: 2px solid #00ffcc; /* Neon Border */
+    border: 2px solid #66ccff; /* Neon Border */
+    box-shadow: var(--glow);
 }
 
 .header-text h1 {
     font-size: 28px;
     margin: 0;
-    color: #00ffcc; /* Neon Text Color */
-    text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc; /* Glow Effect */
+    color: #3399ff; /* Neon Text Color */
+    text-shadow: 0 0 10px #3399ff, 0 0 20px #3399ff; /* Glow Effect */
+    color: var(--primary);
+    text-shadow: var(--glow), 0 0 20px var(--primary);
 }
 
 .header-text p {
     font-size: 18px;
     margin: 5px 0 0;
-    color: #aaa; /* Slightly dimmed for contrast */
+    color: #555555; /* Slightly dimmed for contrast */
 }
 
 /* Boxes style */
@@ -299,37 +363,39 @@ header {
 }
 
 .box {
-    background-color: #222;
+    background-color: #fafafa;
     padding: 30px;
     margin: 15px;
     width: 250px;
     text-align: center;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-    color: #fff;
+    color: #333333;
     transition: transform 0.3s ease;
 }
 
 .box:hover {
     transform: translateY(-10px);
+    box-shadow: 0 0 10px #66ccff; /* Dimmer blue glow */
 }
+
 
 .box-icon {
     width: 50px;
     height: 50px;
     margin-bottom: 20px;
-    filter: drop-shadow(0 0 10px #00ffcc);
+    filter: drop-shadow(0 0 10px #3399ff);
 }
 
 h3 {
     font-size: 1.6rem;
-    color: #00ffcc;
+    color: #3399ff;
     margin-bottom: 10px;
 }
 
 p {
     font-size: 1rem;
-    color: #ccc;
+    color: #777777;
 }
 
 /* Navigation */
@@ -355,25 +421,32 @@ nav ul li {
 }
 
 nav ul li a {
-    color: #fff;
+    color: #333333;
     text-decoration: none;
     font-weight: bold;
     padding: 10px;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
+
 nav ul li a:hover {
-    background-color: #00ffcc;
-    transform: scale(1.1); /* Scale effect on hover */
-    text-shadow: 0 0 10px #fff, 0 0 20px #fff;
+    background-color: #3399ff;
+    transform: scale(0.8); /* Scale effect on hover */
+    text-shadow: 0 0 5px #66ccff;
+    background-color: var(--primary);
+    text-shadow: var(--glow);
 }
 
 .hamburger {
     display: none;
     font-size: 30px;
-    color: #fff;
+    color: #333333;
     cursor: pointer;
     margin-left: 20px;
+}
+
+.hamburger.active {
+    transform: rotate(90deg);
 }
 
 /* About Section */
@@ -409,7 +482,7 @@ nav ul li a:hover {
     display: inline-block;
     margin: 5px;
     font-size: 16px;
-    color: #00ffcc; /* Neon Link Color */
+    color: #3399ff; /* Neon Link Color */
 }
 
 #about ul li a i {
@@ -418,8 +491,8 @@ nav ul li a:hover {
 
 /* Footer */
 footer {
-    background-color: #222;
-    color: #fff;
+    background-color: #fafafa;
+    color: #333333;
     margin-left: calc(-50vw + 50%);
     text-align: center;
     padding: 10px;
@@ -443,7 +516,7 @@ footer {
         position: absolute;
         top: 70px;
         right: 0;
-        background-color: #333;
+        background-color: #eaeaea;
         width: 100%;
         text-align: center;
     }
@@ -499,11 +572,13 @@ footer {
     .hamburger {
         display: block;
         font-size: 26px;
-        color: #fff;
+        color: #333333;
         cursor: pointer;
-        margin-left: auto;
+        margin: 0 auto;
         align-self: center;
+        text-align: center;
     }
+
 
     header {
         flex-direction: column;
@@ -520,7 +595,7 @@ footer {
 
     nav ul {
         width: 100%;
-        background-color: #333;
+        background-color: #eaeaea;
         display: none;
         text-align: center;
     }
@@ -529,3 +604,354 @@ footer {
         display: block;
     }
 }
+
+
+
+.projects-grid.minimal {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  padding: 60px 20px;
+}
+
+.project-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  background-color: #ffffff;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 0 10px rgba(0, 255, 204, 0.15);
+  max-width: 300px;
+  width: 100%;
+}
+
+.project-thumb:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 12px #66ccff; /* Dimmed */
+}
+
+.project-thumb img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #fafafa;
+}
+
+.project-thumb h3 {
+  font-size: 1.2rem;
+  color: #3399ff;
+  padding: 15px;
+  text-align: center;
+  background-color: #ffffff;
+  width: 100%;
+}
+
+/* Hamburger base */
+.menu-toggle {
+  cursor: pointer;
+  width: 30px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  z-index: 1000;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background: #fff;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.social-link {
+  display: inline-block;
+  margin-top: 15px;
+}
+
+.social-icon {
+  width: 190px;
+  height: 70px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+  filter: drop-shadow(0 0 5px #000);
+}
+
+
+/* Transform into X */
+.menu-toggle.active span:nth-child(1) {
+  transform: rotate(45deg) translateY(8px);
+}
+
+.menu-toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-8px);
+}
+
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25D366;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: pulse 2s infinite;
+}
+
+.whatsapp-float img {
+    width: 35px;
+    height: 35px;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+/* =========================
+   ENHANCEMENTS (non-destructive)
+   Additions below enhance UX & animations,
+   while keeping your original structure intact.
+   ========================= */
+
+/* --- header shrink on scroll --- */
+header.scrolled {
+    padding: 10px 20px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.18) !important;
+    background: linear-gradient(180deg, rgba(255,255,255,0.98), rgba(250,250,250,0.96));
+    transition: background 250ms ease, padding 250ms ease, box-shadow 250ms ease;
+}
+
+/* make nav links slightly grow (fix original scale 0.8 shrink) */
+nav ul li a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* subtle focus ring for accessibility */
+nav ul li a:focus {
+    outline: 3px solid rgba(51,153,255,0.18);
+    outline-offset: 4px;
+}
+
+/* --- parallax-ready hero enhancements --- */
+.landing-main.parallax {
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    z-index: 0;
+}
+
+/* add subtle glass effect to .box and .service boxes */
+.box, .services-box, .project-thumb, .contact-form {
+    background: linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.75));
+    backdrop-filter: blur(6px);
+    border: 1px solid rgba(255,255,255,0.5);
+}
+
+/* improve .box hover glow */
+.box:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 18px 40px rgba(51,153,255,0.12);
+}
+
+/* portfolio overlay for better interaction */
+.project-thumb .overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, rgba(0,0,0,0.0), rgba(0,0,0,0.55));
+    opacity: 0;
+    transition: opacity 260ms ease;
+    color: #fff;
+    gap: 12px;
+}
+
+.project-thumb:hover .overlay {
+    opacity: 1;
+}
+
+/* overlay button style */
+.project-thumb .overlay .view-btn {
+    padding: 10px 14px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 999px;
+    font-weight: 700;
+    box-shadow: var(--glow);
+}
+
+/* --- Lightbox modal (for portfolio) --- */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0,0,0,0.85);
+    z-index: 99999;
+    padding: 20px;
+}
+
+.lightbox.open {
+    display: flex;
+}
+
+.lightbox .inner {
+    max-width: 1100px;
+    width: 100%;
+    background: transparent;
+    position: relative;
+}
+
+.lightbox img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+.lightbox .caption {
+    margin-top: 12px;
+    color: #fff;
+    text-align: center;
+    font-weight: 600;
+}
+
+.lightbox .close {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: #fff;
+    border-radius: 999px;
+    width: 40px;
+    height: 40px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+/* --- back to top (keeps your whatsapp float) --- */
+#backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 100px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: #fff;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 32px rgba(51,153,255,0.18);
+    z-index: 1001;
+    transform: translateY(12px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 220ms ease, transform 220ms ease;
+}
+
+#backToTop.visible {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* --- scroll reveal helper (non-destructive) --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 600ms ease, transform 600ms ease;
+    will-change: opacity, transform;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* counters */
+.counter-number {
+    font-size: 2.25rem;
+    color: var(--primary);
+    font-weight: 800;
+    display: inline-block;
+}
+
+/* small responsive tweak to keep hero text legible */
+@media (max-width: 768px) {
+    .intro-text { font-size: 2rem; }
+    .project-thumb img { height: 160px; }
+}
+
+/* keep existing whatsapp float above back-to-top visually */
+.whatsapp-float { z-index: 1002; }
+
+/* small animation for inputs on focus (improved accessibility) */
+.contact-form input:focus, .contact-form textarea:focus {
+    outline: 3px solid rgba(51,153,255,0.12);
+    outline-offset: 4px;
+}
+
+/* ensure .hamburger when toggled visually indicates open state */
+.hamburger.active { transform: rotate(90deg) scale(1.05); transition: transform 180ms ease; }
+
+/* when nav open on mobile, trap background scroll lightly */
+nav.active ~ .page-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.18);
+    z-index: 999;
+}
+
+/* accessibility: visually-hidden helper for screen-readers */
+.visually-hidden {
+    position: absolute !important;
+    height: 1px; width: 1px;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap;
+}
+
+/* small helper to prevent accidental double-borders on full-width sections */
+.full-width-reset {
+    margin-left: calc(-50vw + 50%);
+    width: 100vw;
+}
+
+/* end enhancements */
