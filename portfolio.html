@@ -1,109 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- SEO Meta Tags -->
   <meta charset="UTF-8" />
-  <script src="https://analytics.ahrefs.com/analytics.js" data-key="8P9ydhVtuq0xFB6e1utPGg" async></script>
-  <script src="https://cdn.counter.dev/script.js" data-id="9bf551cb-ce57-40ec-8b2c-914ae6329d3d" data-utcoffset="1"></script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Explore Crowther Tech. Featuring projects from ecommerce sites to interactive games and responsive designs." />
-  <meta name="keywords" content="Crowther Portfolio, Web Developer Projects, Website Design Portfolio, Frontend Developer, Web3 Designer" />
-  <meta name="author" content="Crowther" />
-  
-  <!-- Open Graph Meta -->
-  <meta property="og:title" content="Portfolio | Crowther Tech" />
-  <meta property="og:description" content="See Crowther's latest web development and design projects." />
-  <meta property="og:image" content="https://www.crowthertech.name.ng/assets/profile-picture.png" />
-  <meta property="og:url" content="https://www.crowthertech.name.ng/portfolio.html" />
+  <link rel="icon" type="image/png" href="favi.png" />
+
+  <!-- ═══ PRIMARY SEO ═══ -->
+  <title>Portfolio | CrowtherTech — Web, UI &amp; Game Dev Projects by Hammed Daniel Ajayi</title>
+  <meta name="description" content="Explore the portfolio of Hammed Daniel Ajayi (CrowtherTech) — React web apps, university portals, admin dashboards, e-commerce stores, FastAPI backends, Godot GDScript games, and Roblox Luau projects. Available for hire worldwide." />
+  <meta name="keywords" content="web developer portfolio Nigeria, React developer portfolio, Next.js project examples, FastAPI project portfolio, Godot GDScript portfolio, Roblox Luau project, university portal developer, admin dashboard React, e-commerce web developer Nigeria, full stack developer work samples, CrowtherTech portfolio, hire web developer Africa, web app developer Lagos" />
+  <meta name="author" content="Hammed Daniel Ajayi — CrowtherTech" />
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1" />
+  <link rel="canonical" href="https://crowthertech.name.ng/portfolio.html" />
+  <script defer src="https://cloud.umami.is/script.js" data-website-id="af2ef15a-e18d-4f0f-9e61-cb2b22a00234"></script>
+
+  <!-- ═══ GEO TARGETING ═══ -->
+  <meta name="geo.region" content="NG-LA" />
+  <meta name="geo.placename" content="Lagos, Nigeria" />
+  <meta name="language" content="English" />
+
+  <!-- ═══ OPEN GRAPH ═══ -->
   <meta property="og:type" content="website" />
+  <meta property="og:title" content="Portfolio | CrowtherTech — Web, UI &amp; Game Dev Projects" />
+  <meta property="og:description" content="React portals, dashboards, e-commerce, FastAPI backends, GDScript games, Luau Roblox scripts — real projects by Hammed Daniel Ajayi. Available for hire worldwide." />
+  <meta property="og:url" content="https://crowthertech.name.ng/portfolio.html" />
+  <meta property="og:site_name" content="CrowtherTech" />
+  <meta property="og:locale" content="en_US" />
 
-  <title>Portfolio | Crowther Web Development & Design</title>
+  <!-- ═══ TWITTER ═══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="CrowtherTech Portfolio — Web, UI &amp; Game Dev Projects" />
+  <meta name="twitter:description" content="React, Next.js, FastAPI, GDScript, Luau. Real projects. Hire worldwide." />
 
-  <!-- Fonts & Styles -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@500;700&display=swap" rel="stylesheet" />
+  <!-- ═══ SCHEMA — CollectionPage ═══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "name": "Portfolio — CrowtherTech",
+    "description": "Portfolio of web development, UI design, and game scripting projects by Hammed Daniel Ajayi",
+    "url": "https://crowthertech.name.ng/portfolio.html",
+    "author": {
+      "@type": "Person",
+      "name": "Hammed Daniel Ajayi",
+      "url": "https://crowthertech.name.ng"
+    }
+  }
+  </script>
+
+  <!-- ═══ FONTS ═══ -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=DM+Sans:wght@300;400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="favicon.png" />
+  <style>
+    /* ── PORTFOLIO PAGE STYLES ───────────────── */
+
+    .port-hero {
+      background: var(--ink);
+      padding: 130px clamp(1.5rem,5vw,3.5rem) 80px;
+    }
+    .port-hero .eyebrow { color: var(--red3); }
+    .port-hero .eyebrow::before { background: var(--red3); }
+    .port-hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(2.5rem,5vw,4.2rem);
+      font-weight: 700;
+      color: var(--egg);
+      letter-spacing: -.03em;
+      line-height: 1.08;
+      margin-bottom: 1.2rem;
+    }
+    .port-hero p { color: rgba(244,240,230,.55); font-size: 1rem; max-width: 520px; line-height: 1.8; }
+
+    /* FILTER BAR */
+    .filter-bar {
+      display: flex; gap: .7rem; flex-wrap: wrap;
+      padding: 2.5rem 0 .5rem;
+    }
+    .fb {
+      font-family: var(--mono);
+      font-size: .72rem; font-weight: 700;
+      letter-spacing: .1em; text-transform: uppercase;
+      padding: .42rem 1.05rem;
+      border: 1.5px solid var(--border);
+      border-radius: 3px;
+      color: var(--muted);
+      transition: all .2s;
+      cursor: pointer;
+    }
+    .fb:hover, .fb.on {
+      border-color: var(--red); color: var(--red);
+      background: rgba(192,57,43,.06);
+    }
+
+    /* GRID */
+    .proj-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(330px,1fr));
+      gap: 2rem;
+      padding: 2rem 0 100px;
+    }
+    .proj-card {
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: 8px; overflow: hidden;
+      transition: box-shadow .25s, transform .25s;
+    }
+    .proj-card:hover { box-shadow: var(--sh-lg); transform: translateY(-5px); }
+    .proj-thumb {
+      height: 190px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3rem; position: relative;
+    }
+    .proj-thumb::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to bottom, transparent 50%, rgba(28,23,16,.25));
+    }
+    .t1 { background: linear-gradient(135deg,#1c1710,#2e2419); }
+    .t2 { background: linear-gradient(135deg,#c0392b,#7b1e14); }
+    .t3 { background: linear-gradient(135deg,#1a3a5c,#0d1f32); }
+    .t4 { background: linear-gradient(135deg,#2c3e50,#1a2530); }
+    .t5 { background: linear-gradient(135deg,#4a1a7a,#2a0d4a); }
+    .t6 { background: linear-gradient(135deg,#0d4f1c,#07290e); }
+    .proj-body { padding: 1.5rem; }
+    .proj-type {
+      font-family: var(--mono); font-size: .67rem;
+      font-weight: 700; color: var(--red);
+      text-transform: uppercase; letter-spacing: .12em;
+      margin-bottom: .6rem;
+    }
+    .proj-body h3 { font-family: var(--serif); font-size: 1.15rem; margin-bottom: .6rem; }
+    .proj-body p  { font-size: .82rem; color: var(--muted); line-height: 1.72; margin-bottom: 1.2rem; }
+    .proj-techs   { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1.2rem; }
+    .proj-lnk {
+      display: inline-flex; align-items: center; gap: .35rem;
+      font-size: .78rem; font-weight: 600; color: var(--red);
+      transition: color .2s;
+    }
+    .proj-lnk:hover { color: var(--red2); }
+
+    /* HIDDEN */
+    .proj-card.hidden { display: none; }
+  </style>
 </head>
+<body>
 
-<body class="landing-dark">
-  <!-- Header -->
-  <header>
-    <div class="profile-container">
-      <img src="profile-picture.png" alt="Crowther's Profile Picture" id="profile-picture" loading="lazy" />
-      <div class="header-text">
-        <h1>Crowther Web Development & Design</h1>
-        <p>Web Developer | Website Tester | Graphics Designer | Web3 Enthusiast</p>
-      </div>
+<!-- NAV -->
+<nav class="navbar" role="navigation" aria-label="Main navigation">
+  <a href="index.html" class="nav-brand">Crowther<span>Tech</span></a>
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html" class="active" aria-current="page">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="https://github.com/crowtherg" target="_blank" rel="noopener">GitHub ↗</a>
+    <a href="contact.html" class="nav-hire">Hire Me</a>
+  </div>
+  <button class="hamburger" onclick="toggleNav()" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="mob-menu" id="mobNav">
+  <a href="index.html">Home</a>
+  <a href="portfolio.html">Portfolio</a>
+  <a href="about.html">About</a>
+  <a href="https://github.com/crowtherg" target="_blank" rel="noopener">GitHub ↗</a>
+  <a href="contact.html">Contact / Hire Me</a>
+</div>
+
+<main>
+<!-- HERO -->
+<header class="port-hero" role="banner">
+  <div class="wrapper">
+    <div class="eyebrow">Selected Work</div>
+    <h1>Projects I've Built<br/>&amp; Shipped</h1>
+    <p>Real-world web apps, portals, dashboards, game scripts, and design systems — built over 5+ years of professional freelance work.</p>
+  </div>
+</header>
+
+<!-- PROJECTS -->
+<section aria-label="Project listings">
+  <div class="wrapper">
+    <div class="filter-bar" role="group" aria-label="Filter projects by category">
+      <button class="fb on"     onclick="filter('all',this)">All Projects</button>
+      <button class="fb"        onclick="filter('web',this)">Web Apps</button>
+      <button class="fb"        onclick="filter('design',this)">UI / Design</button>
+      <button class="fb"        onclick="filter('backend',this)">Backend</button>
+      <button class="fb"        onclick="filter('game',this)">Game Dev</button>
     </div>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="portfolio.html" class="active">Portfolio</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="services.html">Services</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="hamburger" id="hamburger">&#9776;</div>
-    </nav>
-  </header>
 
-  <!-- Portfolio Section -->
-  <main>
-    <section class="portfolio-section">
-      <h2 class="cta-text">My Projects</h2>
-      <p class="tagline">Innovative. Responsive. Futuristic.</p>
+    <div class="proj-grid" id="grid">
 
-      <div class="projects-grid minimal">
-        <!-- Project Item -->
-        <div class="project-thumb">
-          <img src="assets/-sek5oz.jpg" alt="MiniFun Game Site" loading="lazy" />
-          <h3>MiniFun Game Site</h3>
+      <article class="proj-card" data-cat="web">
+        <div class="proj-thumb t1" aria-hidden="true">🎓</div>
+        <div class="proj-body">
+          <div class="proj-type">Web App · Portal</div>
+          <h3>University Student Portal</h3>
+          <p>Full-featured student portal with course registration, result viewing, timetable management, and a multi-role admin dashboard — built for a Nigerian university.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">React</span>
+            <span class="tag tag-d">Node.js</span>
+            <span class="tag tag-d">PostgreSQL</span>
+            <span class="tag tag-r">Tailwind</span>
+          </div>
+          <a href="https://kibu.com.ng/" target="_blank" rel="noopener" class="proj-lnk">↗ View Site</a>
         </div>
-        <div class="project-thumb">
-          <img src="assets/Control-V (1).webp" alt="Strike Zone Store" loading="lazy" />
-          <h3>Strike Zone Store</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/😂 Code Humor Generator - Brave 6_26_2025 1_01_19 PM.png" alt="Shinobi Esports" loading="lazy" />
-          <h3>Shinobi Esports</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/😂 Code Humor Generator - Brave 6_26_2025 1_00_05 PM.png" alt="Joke Generator" loading="lazy" />
-          <h3>Joke Generator</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/😂 Code Humor Generator - Brave 6_26_2025 1_00_50 PM.png" alt="Lighten Shop" loading="lazy" />
-          <h3>Lighten Shop</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/20250514_230341.webp" alt="Web Design Showcase" loading="lazy" />
-          <h3>Web Design Showcase</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/IMG-20250608-WA0048.jpg" alt="Streaming Platform Site" loading="lazy" />
-          <h3>Streaming Platform Site</h3>
-        </div>
-        <div class="project-thumb">
-          <img src="assets/KIBU – Kingdom International Bible University - Google Chrome 9_27_2025 1_16_29 PM.png" alt="KIBU" loading="lazy" />
-          <h3>KIBU University</h3>
-        <!-- Add more projects as needed -->
-      </div>
-    </section>
+      </article>
 
-    <!-- Call to Action -->
-    <div class="order">
-      <a href="contact.html" class="cta-button">Get a Website Today</a>
-    </div>
-  </main>
+      <article class="proj-card" data-cat="web">
+        <div class="proj-thumb t2" aria-hidden="true">🛒</div>
+        <div class="proj-body">
+          <div class="proj-type">E-Commerce · Full Stack</div>
+          <h3>E-Commerce Storefront</h3>
+          <p>Mobile-first e-commerce platform with product listings, cart, Paystack checkout integration, and an order tracking system optimised for Nigerian shoppers.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">Next.js</span>
+            <span class="tag tag-d">MongoDB</span>
+            <span class="tag tag-r">Tailwind</span>
+            <span class="tag tag-d">Paystack</span>
+          </div>
+          <a href="https://katalogz.web.app" target="_blank" rel="noopener" class="proj-lnk">↗ View Site</a>
+        </div>
+      </article>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Crowther. All rights reserved.</p>
-  </footer>
+      <article class="proj-card" data-cat="design">
+        <div class="proj-thumb t4" aria-hidden="true">📊</div>
+        <div class="proj-body">
+          <div class="proj-type">UI/UX · Dashboard</div>
+          <h3>Analytics Admin Dashboard</h3>
+          <p>Data-rich admin dashboard with real-time charts, KPI cards, user management, and dark/light mode. Designed in Figma, coded pixel-perfect in React.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">React</span>
+            <span class="tag tag-r">Figma</span>
+            <span class="tag tag-d">Recharts</span>
+            <span class="tag tag-d">Tailwind</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
 
-  <!-- JavaScript -->
-  <script src="script.js"></script>
+      <article class="proj-card" data-cat="backend">
+        <div class="proj-thumb t3" aria-hidden="true">⚡</div>
+        <div class="proj-body">
+          <div class="proj-type">Backend · REST API</div>
+          <h3>FastAPI Backend System</h3>
+          <p>High-performance REST API with JWT authentication, RBAC, file upload, rate limiting, and PostgreSQL integration — fully documented with Swagger UI.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">Python</span>
+            <span class="tag tag-d">FastAPI</span>
+            <span class="tag tag-d">PostgreSQL</span>
+            <span class="tag tag-r">JWT Auth</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
+
+      
+      <article class="proj-card" data-cat="game">
+        <div class="proj-thumb t5" aria-hidden="true">🎮</div>
+        <div class="proj-body">
+          <div class="proj-type">Game Dev · GDScript · Godot</div>
+          <h3>Godot 2D Game Project</h3>
+          <p>A 2D action game built in Godot Engine using GDScript. Features custom player controller, enemy AI with state machines, tile-based levels, and a full save/load system.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">GDScript</span>
+            <span class="tag tag-d">Godot 4</span>
+            <span class="tag tag-r">2D Physics</span>
+            <span class="tag tag-d">AI States</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="game">
+        <div class="proj-thumb t6" aria-hidden="true">🟥</div>
+        <div class="proj-body">
+          <div class="proj-type">Game Dev · Luau · Roblox</div>
+          <h3>Roblox Game System</h3>
+          <p>Custom Roblox experience built in Luau with a DataStore-backed player stats system, in-game economy, interactive NPC dialogue, and a daily rewards loop.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">Luau</span>
+            <span class="tag tag-d">Roblox Studio</span>
+            <span class="tag tag-r">DataStore</span>
+            <span class="tag tag-d">RemoteEvents</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="web">
+        <div class="proj-thumb t2" aria-hidden="true">⚡</div>
+        <div class="proj-body">
+          <div class="proj-type">Full Stack · SaaS</div>
+          <h3>Custom SaaS Dashboard</h3>
+          <p>End-to-end SaaS dashboard with user authentication, subscription billing integration, and a React frontend consuming a Node.js/Express API backend.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">React</span>
+            <span class="tag tag-d">Node.js</span>
+            <span class="tag tag-d">Stripe API</span>
+            <span class="tag tag-r">Tailwind</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
+
+      <article class="proj-card" data-cat="design">
+        <div class="proj-thumb t4" aria-hidden="true">🎨</div>
+        <div class="proj-body">
+          <div class="proj-type">Software Engineer</div>
+          <h3>Software for Proofreading with ai</h3>
+          <p>A custom proofreading tool leveraging AI to provide real-time suggestions and corrections for written content.</p>
+          <div class="proj-techs">
+            <span class="tag tag-r">Python</span>
+            <span class="tag tag-d">Transformers</span>
+            <span class="tag tag-d">Flask</span>
+            <span class="tag tag-r">React</span>
+          </div>
+          <a href="https://github.com/crowtherg" target="_blank" rel="noopener" class="proj-lnk">↗ View on GitHub</a>
+        </div>
+      </article>
+
+    </div><!-- /proj-grid -->
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-logo">Crowther<span>Tech</span></div>
+  <p style="font-size:.8rem;margin-bottom:.5rem;">Full-Stack Developer &amp; Software Engineer — Lagos, Nigeria</p>
+  <div class="footer-divider"></div>
+  <nav class="footer-nav" aria-label="Footer navigation">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="https://github.com/crowthertech" target="_blank" rel="noopener">GitHub</a>
+  </nav>
+  <p class="footer-copy">
+    © 2025 Hammed Daniel Ajayi · CrowtherTech ·
+    <a href="mailto:techcrowther@gmail.com">techcrowther@gmail.com</a>
+  </p>
+</footer>
+
+<script>
+  function toggleNav() {
+    document.getElementById('mobNav').classList.toggle('open');
+  }
+  function filter(cat, btn) {
+    document.querySelectorAll('.fb').forEach(b => b.classList.remove('on'));
+    btn.classList.add('on');
+    document.querySelectorAll('.proj-card').forEach(c => {
+      c.classList.toggle('hidden', cat !== 'all' && c.dataset.cat !== cat);
+      if (!c.classList.contains('hidden')) c.style.animation = 'pageIn .35s ease both';
+    });
+  }
+  document.addEventListener('click', e => {
+    const m = document.getElementById('mobNav');
+    if (m.classList.contains('open') && !m.contains(e.target) && !e.target.closest('.hamburger')) m.classList.remove('open');
+  });
+</script>
 </body>
 </html>
